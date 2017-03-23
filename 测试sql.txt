@@ -1,0 +1,9 @@
+update personalityTest set groupId =0
+update personalityTest set groupIdentity ='组员'
+
+select * from personalityTest where groupId=1 and groupIdentity='组员'
+select * from personalityTest where groupId=2 and groupIdentity='组员'
+select * from personalityTest where groupId=3 and groupIdentity='组员'
+select * from personalityTest where groupId=4 and groupIdentity='组员'
+select * from personalityTest where groupId=5 and groupIdentity='组员'
+select * from personalityTest where groupId=6 and groupIdentity='组员'

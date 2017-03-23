@@ -1,0 +1,127 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="Student_student" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        /* 滑动/展开 */
+        $("ul.expmenu li > div.header").click(function () {
+
+            var arrow = $(this).find("span.arrow");
+
+            if (arrow.hasClass("up")) {
+                arrow.removeClass("up");
+                arrow.addClass("down");
+            } else if (arrow.hasClass("down")) {
+                arrow.removeClass("down");
+                arrow.addClass("up");
+            }
+
+            $(this).parent().find("ul.menu").slideToggle();
+
+        });
+        function js() {
+            return document.getElementsByName('can');
+        }
+        for (var i = 0; i < js().length; i++) {
+            js()[i].onclick = function () {
+                remove();
+                this.className = "current";
+            }
+        }
+        function remove() {
+            for (var i = 0; i < js().length; i++) {
+                js()[i].className = "past";
+            }
+        }
+    });
+    function question() {
+        var ifdestory;
+        if (window.confirm('你确定要退出系统吗？')) {
+            //alert("确定");
+            ifdestory = true;
+        } else {
+            //alert("取消");
+            ifdestory = false;
+        }
+        if (ifdestory) {
+            window.location.href = "../Destory.aspx";
+        }
+    }
+</script>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="leftspace">
+    协作学习实验平台
+    </div>
+<div id="realbox">
+    <div class="bodybox">
+        <div class="col_side">
+        	<div class="user_info">
+            	<img src="../img/admin.png"/>
+                <asp:Label ID="Label" CssClass="user_name" runat="server"></asp:Label>
+        	</div>
+            <div class="subbtn">
+            	<div class="subbtn_icon">
+                	<img src="../img/icons/user_icon.png"/>
+                </div>
+                <div class="subbtn_link">
+                	&nbsp;&nbsp;管理员：<%=Session["name"].ToString()%>
+                </div>
+            </div>
+            <div id="menu_list">
+            	<ul class="expmenu">
+					<li><a name="can" class="current"><span><img class="menu_icon" src="../img/icons/index_icon.png"/></span>首页</a></li>
+					<li><a name="can" class="past" href="" target="main"><img class="menu_icon" src="../img/icons/task_icon.png"/>任务列表</a></li>
+					<li>
+						<div class="header">
+							<span><a name="can" class="past"><img class="menu_icon" src="../img/icons/work_icon.png"/>作业相关<span class="arrow down"></span></a></span>
+                        </div>
+                        
+                        <ul class="menu"> 
+                           	<li><a name="can" class="past" href="" target="main">我的作业</a></li>
+                            <li><a name="can" class="past" href="" target="main">优秀作业</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                      	<div class="header">
+                            <span><a name="can" class="past"><img class="menu_icon" src="../img/icons/sun_icon.png" alt=""/>交流区域<span class="arrow down"></span></a></span>
+                        </div>
+                            
+                      	<ul class="menu">
+                            <li><a name="can" class="past" href="" target="main">查看帖子</a></li>
+                            <li><a name="can" class="past" href="" target="main">发布帖子</a></li>
+                            <li><a name="can" class="past" href="" target="main">我的帖子</a></li>
+                        </ul>
+                    </li>
+					<li><a name="can" class="past" href=""><img class="menu_icon" src="../img/icons/userinfo_icon.png" alt=""/>个人信息</a></li>
+                </ul>
+                <div id="logout">
+                    <span id = "question" onmouseover="this.style.cursor='pointer'" onclick = "question()"><a>安全退出</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="col_main">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+        </div>
+        <div class="footbox">
+    	<p>&copy <a href="http://www.tjnu.edu.cn">天津师范大学</a> <span style="color:#fff;">教育技术学</span></p>
+    </div>
+    </div>
+
+    </div>
+    </form>
+</body>
+</html>

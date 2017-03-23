@@ -1,0 +1,24 @@
+﻿body 
+{
+    padding:0;
+    margin:0;
+    background:#2fb489;
+}
+.login
+{
+    width:360px;
+    margin:0 auto;
+    padding:50px;
+    background:#fff;
+    font-size:15px;
+}
+.login span
+{
+    width:80px;
+}
+.toppic
+{
+    width:360px;
+    margin:60px auto 0;
+    text-align:center;
+}
