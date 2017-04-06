@@ -80,7 +80,7 @@
                 } else {
                     $('#already').css("display","none");
                 }
-                if(rs[1]<36){
+                if(rs[1]<31){
                     $('.grouprs').addClass("disabled");
                     $('.grouprs').removeAttr('onclick');
                     $('.expmenu_none').css("display","block");
@@ -105,20 +105,17 @@
                 url: "../handler/grouping.ashx",
                 success: function (msg) {
                     //1 分数记录成功
-                    //alert(msg);
                     if (msg == 1) {
-                        //alert(msg);
-                        //$("#GroupResult").css("display", "block");
                     }
                     else {
-                        //alert(msg);
-                        //$("#GroupResult").css("display", "none");
                     }
                 },
                 error: function () {
                 }
             })
         }
+
+        
     </script>
 </head>
 <body>
@@ -161,6 +158,18 @@
                             <li><a name="can" class="past" href="Selectexam.aspx" target="main">测试训练</a></li>
                         </ul>                    
                     </li>
+                    <li>
+						<div class="header">
+							<span><a name="can" class="past"><img class="menu_icon" src="../img/icons/work_icon.png"/>作业模块<span class="arrow down"></span></a></span>
+                        </div>
+                        
+                        <ul class="menu"> 
+                           	<li><a name="can" class="past" href="Online_Homework.aspx" target="main">在线作业</a></li>
+                            <li><a name="can" class="past" href="Evaluate_Homework.aspx" target="main">作业互评</a></li>
+                            <li><a name="can" class="past" href="Check_Homework.aspx" target="main">查看成绩</a></li>
+
+                        </ul>
+                    </li>
 					<li>
 						<div class="header">
 							<span><a name="can" class="past"><img class="menu_icon" src="../img/icons/work_icon.png"/>经验值<span class="arrow down"></span></a></span>
@@ -179,7 +188,7 @@
                             
                       	<ul class="menu">
                             <li><a name="can" class="past" href="" target="main">讨论区</a></li>
-                            <li><a name="can" class="past" href="" target="main">实时聊天</a></li>
+                            <li><a name="can" class="past" href="Chat.aspx" target="main">实时聊天</a></li>
                             <li><a name="can" class="past" href="" target="main">作品展示</a></li>
                         </ul>
                     </li>
@@ -199,9 +208,11 @@
     <h4>已有&nbsp;&nbsp;<span id="num"></span>&nbsp;&nbsp;个同学填写问卷</h4>
     </div>
     <div class="groupstatus">
-        <button class="btn btn-large grouprs"  onclick="location='getGroup.aspx'" type="button">查看按学习风格分组结果</button><br />
+        <button class="btn btn-large grouprs"  onclick="location='getGroupbyPer.aspx'" type="button">查看按学习风格分组结果</button><br />
         <br />
-        <button class="btn btn-large groupbygrade"  onclick="location='getGroup.aspx'" type="button">查看按成绩分组结果</button>
+        <button class="btn btn-large groupbygrade"  onclick="location='getGroupbyGrade.aspx'" type="button">查看按成绩分组结果</button><br />
+        <br />
+        <button class="btn btn-large btn-success vote"  onclick="location='vote.aspx'" type="button">参与分组方法投票</button>
     </div>
         </div>
         </div>

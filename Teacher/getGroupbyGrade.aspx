@@ -1,7 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/student.master" AutoEventWireup="true" CodeFile="getGroup3.aspx.cs" Inherits="Student_getGroup" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/teacher.master" AutoEventWireup="true" CodeFile="getGroupbyGrade.aspx.cs" Inherits="Teacher_getGroupbyGrade" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
+    <link href="../css/tablecloth.css" rel="stylesheet" type="text/css" />
+    <script src="../js/tablecloth.js" type="text/javascript"></script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
@@ -23,7 +24,7 @@
     <asp:SqlDataSource ID="SqlDataGroup1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:coLearningConnectionString %>" 
         
-        SelectCommand="SELECT s.StuNo, s.StuName, p.groupId, p.groupIdentity FROM tb_student AS s CROSS JOIN tb_personalityTest AS p where s.StuNo=p.StuNo and groupId in (select groupId from tb_personalityTest where StuNo='1610030169') order by groupId,groupIdentity">
+        SelectCommand="SELECT s.StuNo, s.StuName, p.groupId, p.groupIdentity FROM tb_student AS s CROSS JOIN tb_grade AS p where s.klass='1504班' and s.StuNo=p.StuNo order by groupId,groupIdentity">
     </asp:SqlDataSource>
 </asp:Content>
 

@@ -24,7 +24,7 @@
     <asp:SqlDataSource ID="SqlDataGroup1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:coLearningConnectionString %>" 
         
-        SelectCommand="SELECT s.StuNo, s.StuName, p.groupId, p.groupIdentity FROM tb_student AS s CROSS JOIN tb_personalityTest AS p where s.StuNo=p.StuNo order by groupId,groupIdentity">
+        SelectCommand="SELECT s.StuNo, s.StuName, p.groupId, p.groupIdentity FROM tb_student AS s CROSS JOIN tb_personalityTest AS p where s.klass='1504班' and s.StuNo=p.StuNo order by groupId,groupIdentity">
     </asp:SqlDataSource>
 </asp:Content>
 

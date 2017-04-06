@@ -9,9 +9,10 @@ public class teacherdefault : IHttpHandler {
     
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/plain";
+        string klass="1504班";
         int tc;
         QuestionnaireBLL bll = new QuestionnaireBLL();
-        bll.IstestCount(out tc);
+        bll.IstestCount(klass,out tc);
         context.Response.Write( tc);
         //context.Response.Write(tc);只能返回一个值，所以以逗号分开，前端用js split
     }

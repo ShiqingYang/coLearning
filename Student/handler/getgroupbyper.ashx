@@ -2,13 +2,15 @@
 
 using System;
 using System.Web;
+using System.Web.SessionState;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using System.Text;
 using Model;
 using BLL;
 
-public class getgroupbyper : IHttpHandler {
+public class getgroupbyper : IHttpHandler,IRequiresSessionState
+{
     
     public void ProcessRequest (HttpContext context) {
         context.Response.ContentType = "text/plain";

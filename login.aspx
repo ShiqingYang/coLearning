@@ -14,6 +14,7 @@
             $("#imgCode").click(function () {
                 changeCode();
             })
+            $("#txtCode").attr("autocomplete","off");
         })
         function changeCode() {
             $("#imgCode").attr("src", "ValidateCode.ashx?_=" + Math.random())

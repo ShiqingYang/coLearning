@@ -1,12 +1,23 @@
 ﻿* {
-	padding:0px;
-	margin:0px;
+	padding:0;
+	margin:0;
+}
+ul
+{
+    margin:0;
+}
+label
+{
+    display:inline-block;
+    height:35px;
+    line-height:35px;
 }
 body
 {
 	background-color:#FAFAFA;
 	font-family:microsoft yahei;
 	color:#333;
+	font-size:16px;
 }
 a {
 	text-decoration:none;

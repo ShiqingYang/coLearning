@@ -9,6 +9,9 @@ public partial class Student_student : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["ID"] == null)
+        {
+            Response.Redirect("~/login.aspx");
+        }
     }
 }

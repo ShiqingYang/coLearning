@@ -23,6 +23,7 @@ public class questionnaire : IHttpHandler, IRequiresSessionState
     public void ProcessRequest(HttpContext context)
     {
         context.Response.ContentType = "text/plain";
+        string klass = context.Session["klass"].ToString();
         string stunum = context.Session["ID"].ToString();
         int testScore1 = int.Parse(context.Request.Form["s1"]);
         int testScore2 = int.Parse(context.Request.Form["s2"]);

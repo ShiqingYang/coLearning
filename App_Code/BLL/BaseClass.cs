@@ -5,7 +5,7 @@ using System.Web;
 using System.Data.SqlClient;
 
 /// <summary>
-///BaseClass 的摘要说明
+///Baseclass 的摘要说明
 /// </summary>
 public class BaseClass
 {
@@ -31,5 +31,4 @@ public class BaseClass
         cm.ExecuteNonQuery();
         conn.Close();
     }
-  
 }

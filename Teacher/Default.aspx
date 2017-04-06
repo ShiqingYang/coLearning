@@ -14,7 +14,7 @@
             success: function (tc) {
                 //alert(tc);
                 $("#num").html(tc);
-                if (tc != 36) {
+                if (tc != 31) {
 
                     $('.grouprs').addClass("disabled");
                     $('.grouprs').removeAttr('onclick');
@@ -57,10 +57,14 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
         <div>
     <div class="notfirstLog">
-    <h4>已有&nbsp;&nbsp;<span id="num"></span>&nbsp;&nbsp;个同学填写问卷</h4>
+    <h4>1504班&nbsp;&nbsp;已有&nbsp;&nbsp;<span id="num"></span>&nbsp;&nbsp;个同学填写问卷</h4>
     </div>
     <div class="groupstatus">
-        <button class="btn btn-large grouprs"  onclick="location='getGroup.aspx'" type="button">查看分组结果</button>
+        <button class="btn btn-large grouprs"  onclick="location='getGroup.aspx'" type="button">查看按气质类型分组结果</button><br />
+        <br />
+        <button class="btn btn-large groupbygrade"  onclick="location='getGroupbyGrade.aspx'" type="button">查看按成绩分组结果</button><br />
+        <br />
+        <button class="btn btn-large btn-success vote"  onclick="location='voteResult.aspx'" type="button">查看分组类型投票结果</button>
     </div>
         </div>
 </asp:Content>

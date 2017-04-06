@@ -33,9 +33,9 @@ namespace BLL
         }
 
         //查询已填写的人数
-        public int IstestCount(out int msg1)
+        public int IstestCount(string klass,out int msg1)
         {
-            int tc = dal.IstestCount();
+            int tc = dal.IstestCount(klass);
             msg1 = tc;
             return tc;
         }
@@ -59,31 +59,31 @@ namespace BLL
 
 
         //统计多血质人数
-        public int Grouping()
+        public int Grouping(string klass)
         {
-            l = dal.LeaderAssign();//更新身份为多血质的人为组长
+            l = dal.LeaderAssign(klass);//更新身份为多血质的人为组长
             if (l > 0)
             {
-                dnum = dal.DuoxueCount();  //计算多血质的人数
+                dnum = dal.DuoxueCount(klass);  //计算多血质的人数
             }
             else
             {
                 dnum = 0;
             }
-            if (dnum > 6)
+            if (dnum >=5)
             {
-                t=dal.DuoxueLeftToMember();  //把6个多血质之外的多血质改为组员
+                t=dal.DuoxueLeftToMember(klass);  //把6个多血质之外的多血质改为组员
             }
-            else 
+            else
             {
-                t=dal.DanzhiLeaderAssign(6-dnum);  //多血质不足6个，则胆汁质补上
+                t = dal.DanzhiLeaderAssign(5 - dnum, klass);  //多血质不足6个，则胆汁质补上
             }
             if (t > 0)
             {
-                for (int i = 1; i < 7; i++)
+                for (int i = 1; i < 5; i++)
                 {
-                    no = dal.SetLeaderId(i);  //给组长编号1-6，每组1个组长
-                    no = dal.SetMembergroupId(i);  //给组员编号，每组5个组员
+                    no = dal.SetLeaderId(i,klass);  //给组长编号1-6，每组1个组长
+                    no = dal.SetMembergroupId(i,klass);  //给组员编号，每组5个组员
                 }
                 return 1;
             }

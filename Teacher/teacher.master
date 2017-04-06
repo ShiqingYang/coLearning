@@ -5,7 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../css/main.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="../js/jquery.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function () {
@@ -61,7 +63,7 @@
 <body>
     <form id="form1" runat="server">
     <div id="leftspace">
-    协作学习实验平台
+    实验教学协作学习平台
     </div>
 <div id="realbox">
     <div class="bodybox">
@@ -80,11 +82,11 @@
             </div>
             <div id="menu_list">
             	<ul class="expmenu">
-					<li><a name="can" class="current"><span><img class="menu_icon" src="../img/icons/index_icon.png"/></span>首页</a></li>
-					<li><a name="can" class="past" href="" target="main"><img class="menu_icon" src="../img/icons/task_icon.png"/>查看分组</a></li>
+					<li><a name="can" class=""  href="Default.aspx"><span><img class="menu_icon" src="../img/icons/index_icon.png"/></span>首页</a></li>
+					<li><a name="can" class="past" href="uploadResource.aspx"><img class="menu_icon" src="../img/icons/task_icon.png"/>发布上传</a></li>
 					<li>
 						<div class="header">
-							<span><a name="can" class="past"><img class="menu_icon" src="../img/icons/work_icon.png"/>上传任务</a></span>
+							<span><a name="can" class="past" href="publishTask.aspx"><img class="menu_icon" src="../img/icons/work_icon.png"/>发布任务</a></span>
                         </div>
                     </li>
                     

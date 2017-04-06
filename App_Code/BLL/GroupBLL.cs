@@ -37,5 +37,22 @@ namespace BLL
         {
             return dal.GetGroupLeader(stunum);
         }
+
+        //获取所在组号成绩
+        public string GetGroupIdbygrade(string stunum)
+        {
+            return dal.GetGroupIdbygrade(stunum);
+        }
+
+        //获取组长成绩
+        public string GetGroupLeaderbygrade(string stunum)
+        {
+            return dal.GetGroupLeaderbygrade(stunum);
+        }
+
+        public List<User> GetPartnersbygrade(string stunum)
+        {
+            return dal.GetPartnersbygrade(stunum);
+        }
     }
 }
