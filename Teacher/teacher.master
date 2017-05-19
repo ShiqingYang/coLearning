@@ -101,7 +101,7 @@
                             <li><a name="can" class="past" href="" target="main">我的帖子</a></li>
                         </ul>
                     </li>
-					<li><a name="can" class="past" href=""><img class="menu_icon" src="../img/icons/userinfo_icon.png" alt=""/>个人信息</a></li>
+					<li><a name="can" class="past" href="ExamResult.aspx"><img class="menu_icon" src="../img/icons/userinfo_icon.png" alt=""/>查看成绩</a></li>
                 </ul>
                 <div id="logout">
                     <span id = "question" onmouseover="this.style.cursor='pointer'" onclick = "question()"><a>安全退出</a></span>

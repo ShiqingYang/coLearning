@@ -154,7 +154,7 @@
                         </div>
                     
                         <ul class="menu"> 
-                           	<li><a name="can" class="past" href="Watchvedio2.aspx" target="main">观看教学视频</a></li>
+                           	<li><a name="can" class="past" href="Watchvideo2.aspx" target="main">观看教学视频</a></li>
                             <li><a name="can" class="past" href="Selectexam.aspx" target="main">测试训练</a></li>
                         </ul>                    
                     </li>
@@ -176,8 +176,8 @@
                         </div>
                         
                         <ul class="menu"> 
-                           	<li><a name="can" class="past" href="" target="main">个人经验值</a></li>
-                            <li><a name="can" class="past" href="" target="main">经验值排名</a></li>
+                           	<li><a name="can" class="past" href="expnum.aspx" target="main">个人经验值</a></li>
+                            <li><a name="can" class="past" href="expnum_rank.aspx" target="main">经验值排名</a></li>
                         </ul>
                     </li>
                     

@@ -15,7 +15,7 @@ public partial class Student_Quize : System.Web.UI.Page
         int i = 1;
         SqlConnection conn = BaseClass.DBCon();
         conn.Open();
-        SqlCommand cmd = new SqlCommand("select  * from tb_tvedio where Vediotitle='"+ Session["KM"]+"'", conn);
+        SqlCommand cmd = new SqlCommand("select  * from tb_tvideo where videotitle='"+ Session["KM"]+"'", conn);
         SqlDataReader sdr = cmd.ExecuteReader();
         while (sdr.Read())
         {

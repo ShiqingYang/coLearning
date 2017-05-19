@@ -5,13 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:coLearningConnectionString %>" 
-        SelectCommand="SELECT DISTINCT [Vediotitle] FROM [tb_tvedio]">
+        SelectCommand="SELECT DISTINCT [videotitle] FROM [tb_tvideo]">
     </asp:SqlDataSource>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <div style=" text-align:center">选择章节：&nbsp;&nbsp;&nbsp; 
     <asp:DropDownList ID="DropDownList1" runat="server" 
-        DataSourceID="SqlDataSource1" DataTextField="Vediotitle" 
-        DataValueField="Vediotitle">
+        DataSourceID="SqlDataSource1" DataTextField="videotitle" 
+        DataValueField="videotitle">
     </asp:DropDownList></div>
 
  

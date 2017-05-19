@@ -19,7 +19,7 @@ public partial class Student_shujukushihua : System.Web.UI.Page
     private void CrateImage()
     {
         {
-            int width = 600, height = 440;
+            int width = 600, height = 500;
             Bitmap image = new Bitmap(width, height);//创建位图对象
             Graphics g = Graphics.FromImage(image);//创建画布
             g.Clear(Color.White);//设置(清空)画布背景色
@@ -32,40 +32,42 @@ public partial class Student_shujukushihua : System.Web.UI.Page
             Pen mypen1 = new Pen(Color.Blue, 2);
             //绘制横向线条10根
             int y = 106;
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 10; i++)
             {
                 g.DrawLine(mypen, 60, y, 540, y);
-                y = y + 26;
+                y = y + 36;
             }
             g.DrawLine(mypen1, 60, y, 540, y);
             //绘制纵向线条12根
-            int x = 100;
-            for (int i = 0; i < 11; i++)
+            int x = 120;
+            g.DrawLine(mypen1, 60, 80, 60, 466);
+            for (int i = 0; i < 6; i++)
             {
-                g.DrawLine(mypen, x, 80, x, 340);
-                x = x + 40;
+                g.DrawLine(mypen, x, 80, x, 466);
+                x = x + 60;
+
             }
-            g.DrawLine(mypen1, x - 480, 80, x - 480, 340);
+
             Font font = new Font("Arial", 9, FontStyle.Regular);//设置字体、字号、文本修饰
             //添加x轴标记
-            String[] n = { "测试", "讨论", "发帖", "回帖", "点赞" };
-            x = 62;
-            for (int i = 0; i <4; i++)
+            String[] n = { "一", "二", "三", "四", "五", "六" };
+            x = 80;
+            for (int i = 0; i < 6; i++)
             {
-                g.DrawString(n[i].ToString(), font, Brushes.Red, x, 348);
-                x = x + 40;
+                g.DrawString(n[i].ToString(), font, Brushes.Red, x, 466);
+                x = x + 60;
             }
             //添加y轴标记
-            String[] m = { "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0" };
-            y = 85;
+            String[] m = { "100", "90", "80", "70", "60", "50", "40", "30", "20", "10", "0" };
+            y = 96;
             for (int i = 0; i < 11; i++)
             {
                 g.DrawString(m[i].ToString(), font, Brushes.Red, 25, y);
-                y = y + 26;
+                y = y + 36;
             }
             //检索数据并绘制柱状图
-            int[] Count = new int[4];
-            string cmdtxt2 = "select *  from tb_expnum where StuNo=" + Session["ID"] + "";
+            int[] Count = new int[5];
+            string cmdtxt2 = "select *  from tb_grade where StuNo=" + Session["ID"] + "";
             SqlConnection conn = BaseClass.DBCon();
             conn.Open();
             SqlDataAdapter da = new SqlDataAdapter(cmdtxt2, conn);
@@ -73,15 +75,18 @@ public partial class Student_shujukushihua : System.Web.UI.Page
             da.Fill(ds);
             for (int j = 0; j < 4; j++)
             {
-                Count[j] = Convert.ToInt32(ds.Tables[0].Rows[0][j + 4].ToString());
+                Count[j] = Convert.ToInt32(ds.Tables[0].Rows[0][j + 1].ToString());
             }
             //显示柱状效果
-            x = 70;//图的初始位置
+            x = 75;//图的初始位置
             for (int i = 0; i < 4; i++)
             {
-                SolidBrush mybrush = new SolidBrush(Color.Blue);
-                g.FillRectangle(mybrush, x, 340 - Count[i] * 26 , 20, Count[i] * 26 );//填充画布颜色
-                x = x + 40;
+                Font font3 = new Font("宋体", 20, FontStyle.Regular);//设置字体、字号、文本修饰
+                Brush brush3 = new SolidBrush(Color.Red);//创建笔刷（颜色）
+                g.DrawString("" + Count[i] + "", font3, brush3, new PointF(x, 436 - Count[i] * 36 / 10));
+                SolidBrush mybrush = new SolidBrush(Color.Green);
+                g.FillRectangle(mybrush, x, 466 - Count[i] * 36 / 10, 30, Count[i] * 36 / 10);//填充画布颜色
+                x = x + 60;
             }
             //页面显示图像
             MemoryStream ms = new MemoryStream();//创建内存数据流对象

@@ -1,17 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/student.master" AutoEventWireup="true" CodeFile="Watchvedio.aspx.cs" Inherits="Student_Watch_vedio" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/student.master" AutoEventWireup="true" CodeFile="Watchvideo.aspx.cs" Inherits="Student_Watch_video" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
-    <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>无标题文档</title>
 <script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
-</head>
-
-<body>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="320" height="240" id="FlashID" title="在线视频">
-  <param name="movie" value="../vedio/相对性.swf" />
+  <param name="movie" value="../video/相对性.swf" />
   <param name="quality" value="high" />
   <param name="wmode" value="opaque" />
   <param name="swfversion" value="6.0.65.0" />
@@ -19,7 +15,7 @@
   <param name="expressinstall" value="Scripts/expressInstall.swf" />
   <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
   <!--[if !IE]>-->
-  <object type="application/x-shockwave-flash" data="../vedio/相对性.swf" width="320" 
+  <object type="application/x-shockwave-flash" data="../video/相对性.swf" width="320" 
         height="240">
     <!--<![endif]-->
     <param name="quality" value="high" />
@@ -35,11 +31,9 @@
   </object>
   <!--<![endif]-->
 </object>
-</object>
 <script type="text/javascript">
     swfobject.registerObject("FlashID");
 </script>
-</body>
 <br />
 </asp:Content>
 

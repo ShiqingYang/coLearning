@@ -1,9 +1,9 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
+﻿﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="login.aspx.cs" Inherits="login" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<head id="Head1" runat="server">
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/login.css" rel="stylesheet" type="text/css" />
@@ -14,7 +14,7 @@
             $("#imgCode").click(function () {
                 changeCode();
             })
-            $("#txtCode").attr("autocomplete","off");
+            $("#txtCode").attr("autocomplete", "off");
         })
         function changeCode() {
             $("#imgCode").attr("src", "ValidateCode.ashx?_=" + Math.random())

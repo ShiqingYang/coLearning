@@ -13,7 +13,7 @@
     .vote div,h4
     {
         font-size:16px;
-        height:50px;
+        height:30px;
     }
     .type1
     {
@@ -26,7 +26,7 @@
         height:30px;
         background:#8ccf4a;
         display:inline-block;
-        margin:0 100px 0 100px;
+        margin:0 100px 0 50px;
     }
     #rect2
     {
@@ -34,10 +34,10 @@
         height:30px;
         background:#e5b14c;
         display:inline-block;
-        margin:0 100px 0 100px;
+        margin:0 100px 0 50px;
     }
 </style>
-<script>
+<script type="text/javascript">
     $.ajax({
         type: "get",
         url: "handler/getvote.ashx",

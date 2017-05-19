@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>测验</title>
+    
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $.ajax({
+                type: "post",
+                url: "handler/getquizquestion.ashx",
+                success: function (msg) {
+                    if (msg) {            
+                        var obj = eval(msg);
+                        var str = new Array();
+                        for (var i = 0; i < obj.length; i++) {
+                            var testContent = obj[i].TestContent;
+                            var testAns1 = obj[i].TestAns1;
+                            var testAns2 = obj[i].TestAns2;
+                            var testAns3 = obj[i].TestAns3;
+                            var testAns4 = obj[i].TestAns4;
+                            var rightAns = obj[i].RightAns;
+                            str[i] = "{'question': '";
+                            str[i] += testContent;
+                            str[i] += "','answers': ['";
+                            str[i] += testAns1;
+                            str[i] += "', '";
+                            str[i] += testAns2;
+                            str[i] += "', '";
+                            str[i] += testAns3;
+                            str[i] += "', '";
+                            str[i] += testAns4
+                            str[i] += "'],'correctAnswer': ";
+                            str[i] += rightAns;
+                            str[i] += "}";
+                            //把字符串转化为对象
+                            str[i] = eval("(" + str[i] + ")"); 
+
+                        }
+                        var init = {"questions": str};
+                        //console.log(init);
+                        $(function () {
+                            $('#quiz-container').jquizzy({
+                                questions: init.questions
+                            });
+                        });
+                    }
+                },
+                error: function () {
+
+                }
+            })
+        });
+    
+    </script>
+    <script type="text/javascript" src="../js/exam.js"></script>
+    <!--这里是测试的直接在页面中填的，上面js中ajax获取数据也会转化成下面这样-->
+    <!--
+    <script type="text/javascript">
+        var init = {
+            'questions': [{
+                'question': '1. 以下数据定义中错误的是：',
+                'answers': ['A. int x[][3]={0}<br/>asf{<br/>fdsaf<br/>}', 'B. int x[2][3]={{1,2},{3,4}{5,6}}', 'C. int x[][3]={{1,2,3},{4,5,6}}', 'D. int x[2][3]={1,2,3,4,5,6}'],
+                'correctAnswer':2
+            }
+            ]
+        };
+        $(function () {
+            $('#quiz-container').jquizzy({
+                questions: init.questions
+            });
+        });
+    </script>-->
+</head>
+
+<body>
+
+<div class="demo">
+    <div id='quiz-container'></div>
+</div>
+<div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
+</div>
+</body>
+</html>

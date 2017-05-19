@@ -26,7 +26,7 @@ public partial class Student_Selectexam : System.Web.UI.Page
             Response.Write("<script language=javascript>alert('您已经参加过此科目的考试了！')</script>");
         else
         {
-            cmd = new SqlCommand("select count(*) from tb_tvedio where Vediotitle='" + StuKC + "'", conn);
+            cmd = new SqlCommand("select count(*) from tb_tvideo where videotitle='" + StuKC + "'", conn);
             int n = Convert.ToInt32(cmd.ExecuteScalar());
             if (n > 0)
             {
@@ -35,7 +35,7 @@ public partial class Student_Selectexam : System.Web.UI.Page
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 Session["KM"] = StuKC;
-                Response.Redirect("Quize.aspx");
+                Response.Redirect("Exam.html");
             }
             else
                 Response.Write("<script language=javascript>alert('此科目没有考试题！')</script>");

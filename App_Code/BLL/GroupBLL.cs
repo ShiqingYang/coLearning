@@ -44,7 +44,7 @@ namespace BLL
             return dal.GetGroupIdbygrade(stunum);
         }
 
-        //获取组长成绩
+        //获取组长按成绩
         public string GetGroupLeaderbygrade(string stunum)
         {
             return dal.GetGroupLeaderbygrade(stunum);

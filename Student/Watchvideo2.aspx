@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/student.master" AutoEventWireup="true" CodeFile="Watchvedio2.aspx.cs" Inherits="Student_Watchvedio2" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Student/student.master" AutoEventWireup="true" CodeFile="Watchvideo2.aspx.cs" Inherits="Student_Watchvideo2" %>
 
 <%@ Register assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" namespace="System.Web.UI.DataVisualization.Charting" tagprefix="asp" %>
 
@@ -8,7 +8,7 @@
     &nbsp;&nbsp;
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
         ConnectionString="<%$ ConnectionStrings:coLearningConnectionString %>" 
-        SelectCommand="SELECT DISTINCT [Vediotitle], [address] FROM [tb_tvedio]">
+        SelectCommand="SELECT DISTINCT [videotitle], [address] FROM [tb_tvideo]">
     </asp:SqlDataSource>
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" 
         CellPadding="4" DataSourceID="SqlDataSource1" Font-Bold="True" 
@@ -16,8 +16,8 @@
         Width="877px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:BoundField DataField="Vediotitle" HeaderText="学习主题" 
-                SortExpression="Vediotitle" >
+            <asp:BoundField DataField="videotitle" HeaderText="学习主题" 
+                SortExpression="videotitle" >
             <HeaderStyle HorizontalAlign="Center" VerticalAlign="Middle" />
             <ItemStyle HorizontalAlign="Center" VerticalAlign="Middle" />
             </asp:BoundField>
